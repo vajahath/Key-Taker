@@ -42,6 +42,8 @@ display = x11.XOpenDisplay(None)
 # bit representing the state for a single key.
 keyboard = (ct.c_char * 32)()
 
+# these are the locations (byte, byte value) of special
+# keys to watch
 shift_keys = ((6,4), (7,64))
 modifiers = {
     "left shift": (6,4),
@@ -56,6 +58,9 @@ last_pressed_adjusted = set()
 last_modifier_state = {}
 caps_lock_state = 0
 
+# key is byte number, value is a dictionary whose
+# keys are values for that byte, and values are the
+# keys corresponding to those byte values
 key_mapping = {
     1: {
         0b00000010: "<esc>",
