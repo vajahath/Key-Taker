@@ -1,2 +1,2 @@
 # modify this file
-python <path to snoop.sh>
+python <path to log.py>
